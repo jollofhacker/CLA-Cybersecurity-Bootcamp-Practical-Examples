@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Extractor</title>
+</head>
+<body>
+    <h1>Get the Nth Character of a String</h1>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <!-- Text input for the user to enter a string. The input is identified by 'inputString'. -->
+    
+    <input type="number" id="charPosition" placeholder="Enter position (1-based)">
+    <!-- Number input for the user to enter the character position in the string Identified by 'charPosition'. -->
+    
+    <button onclick="displayNthCharacter()">Get Character</button>
+    <!-- Button that triggers the displayNthCharacter function to fetch and display the character at the specified position when clicked. -->
+    
+    <p id="result">Result</p>
+    <!-- Paragraph displays the result with a placeholder 'Result' shown initially. -->
+    
+    <script>
+        // Function to retrieve the nth character of a given string
+        function getNthCharacter(a, n) {
+            if (n > 0 && n <= a.length) { // Check if the specified position is valid
+                return a[n - 1]; // Return the character at the nth position
+            } else {
+                return 'Invalid'; // Return error message if the position is out of the valid range
+            }
+        }
+    
+        // Function called when the 'Get Character' button is clicked
+        function displayNthCharacter() {
+            var str = document.getElementById('inputString').value; // Retrieve the string from the input field
+            var pos = parseInt(document.getElementById('charPosition').value); // Convert the position from string to integer
+            var result = getNthCharacter(str, pos); // Fetch the character at the specified position
+            document.getElementById('result').innerHTML = result; // Display the character or error message in the 'result'
+        }
+    </script>
+
+</body>
+</html>
