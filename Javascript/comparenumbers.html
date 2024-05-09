@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equality Check</title>
+</head>
+<body>
+    <h1>Check if Two Values are Equal and of the Same Type</h1>
+    <!-- Input field for the first value -->
+    <input type="text" id="valueA" placeholder="Enter value A">
+    <!-- Text input for user to enter the first value, identified by 'valueA' -->
+
+    <!-- Input field for the second value -->
+    <input type="text" id="valueB" placeholder="Enter value B">
+    <!-- Text input for user to enter the second value, identified by 'valueB' -->
+
+    <!-- Button to initiate the equality check -->
+    <button onclick="performCheck()">Check Equality</button>
+    <!-- Button labeled 'Check Equality' that triggers 'performCheck' function on click -->
+
+    <!-- Paragraph to display the result of the check -->
+    <p id="result">Result</p>
+    <!-- Initially displays 'Result' but will be updated with 'True' or 'False' after check -->
+
+    <!-- JavaScript functions for functionality -->
+    <script>
+        // Function to check equality of two values
+        function checkEquality(a, b) {
+            // Uses strict equality to compare both value and type
+            return a === b;
+        }
+
+        // Function executed when the user clicks the 'Check Equality' button
+        function performCheck() {
+            var a = document.getElementById('valueA').value; // Retrieves the value from the first input field
+            var b = document.getElementById('valueB').value; // Retrieves the value from the second input field
+            var isEqual = checkEquality(a, b); // Calls 'checkEquality' to compare values
+            // Updates the innerHTML of the 'result' paragraph based on comparison result
+            document.getElementById('result').innerHTML = isEqual ? 'True' : 'False';
+        }
+    </script>
+</body>
+</html>
